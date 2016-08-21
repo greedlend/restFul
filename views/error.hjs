@@ -1,0 +1,5 @@
+<body>
+    <h1>{{ message }}</h1>
+    <p>Welcome to {{	errorCode	}}</p>
+    <h2>{{	error	}}</h2>
+  </body>

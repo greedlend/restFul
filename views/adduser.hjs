@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <script type="text/javascript" src='/javascripts/jquery.min.js'></script>
+    <script type="text/javascript" src='/javascripts/adduser.js'></script>
+
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+ 
+    <form name="adduser" action="./adduser" method="post">
+      Username: <input type="text" name="username" placeholder= "{{enterUser}}">
+      Email: <input type="email" name="email" placeholder="{{enterEmail}}">
+      <input type="submit" value="submit">
+    </form>
+    <table class='table table-striped'>
+        <tr>
+          <td><span>User</span></td>
+          <td><span>Email</span></td>
+          <td><span>Manuplation</span></td>
+        </tr>
+      {{#todos}}
+        <tr>
+          <td><span name='username'>{{username}}</span></td>
+          <td><span name='email'>{{email}}</span></td>
+          <td><button type='button' name='editcancel'>{{editcancel}}</button>
+              <button type='button' name='edituser'>{{edituser}}</button>
+              <button type='button' name='editdone' data-id='{{_id}}'>{{editdone}}</button>
+              <a href="./deleteuser/{{_id}}">[Del]</a>
+          </td>
+        </tr>
+      {{/todos}}
+    </table>
+    
+  </body>
+</html>
